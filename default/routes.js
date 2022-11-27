@@ -1,8 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const { quote, defaultroute } = require('./controller')
-
-router.get('/', quote)
+const { defaultroute } = require('./controller')
 
 router.get('*', defaultroute)
 
