@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const User = require('./models/user/index.js')
 const Post = require('./models/post/index.js')
@@ -7,6 +8,7 @@ const { client } = require('./gvars.js')
 
 app.use(express.static('./static'))
 app.use(express.urlencoded({ extended: false }))
+app.use(cors())
 app.use(express.json())
 
 // ROUTES
